@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FORCA FUNCIONAL</title>
+    <link rel="stylesheet" href="personalizacao.css">
+</head>
+<body>
+    <div class="container">
+        <h1>JOGO DA FORCA (Funcional)</h1>
+        
+        <div class="tentativas">
+            Tentativas restantes: <span id="tentativas">6</span>
+        </div>
+        
+        <div class="forca" id="palavra"></div>
+        
+        <div class="letras-erradas">
+            Letras erradas: <span id="erradas"></span>
+        </div>
+        
+        <div id="teclado" class="teclado-virtual"></div>
+        
+        <div id="mensagem" class="mensagem-jogo"></div>
+        
+        <button id="reiniciar-btn" class="botao-reiniciar">Jogar Novamente</button>
+    </div>
+
+    <div class="forca-desenho">
+        <div class="poste"></div>
+        <div class="trave"></div>
+        <div class="corda"></div>
+
+        <div id="cabeca" class="parte cabeca"></div>
+        <div id="tronco" class="parte tronco"></div>
+        <div id="braco-esq" class="parte braco-esq"></div>
+        <div id="braco-dir" class="parte braco-dir"></div>
+        <div id="perna-esq" class="parte perna-esq"></div>
+        <div id="perna-dir" class="parte perna-dir"></div>
+    </div>
+
+
+    <script src="reformulado.js"></script>
+</body>
+</html>
