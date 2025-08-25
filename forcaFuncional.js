@@ -208,3 +208,5 @@ const cicloDeJogo = (estadoAtual) => {
 document.addEventListener("DOMContentLoaded", () => {
   cicloDeJogo(iniciar())
 })
+
+teste commits 
