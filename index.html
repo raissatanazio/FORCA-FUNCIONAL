@@ -1,47 +1,55 @@
 <!DOCTYPE html>
-<html lang="pt">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FORCA FUNCIONAL</title>
-    <link rel="stylesheet" href="personalizacao.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <h1>JOGO DA FORCA (Funcional)</h1>
-        
-        <div class="tentativas">
-            Tentativas restantes: <span id="tentativas">6</span>
+    <div id="app">
+        <h1>🎯JOGO DA FORCA</h1>
+
+        <!-- Teclado do jogo -->
+        <div class="teclado">
+            <!-- Letras A–Z -->
+            <button class="letra-btn">A</button>
+            <button class="letra-btn">B</button>
+            <button class="letra-btn">C</button>
+            <button class="letra-btn">D</button>
+            <button class="letra-btn">E</button>
+            <button class="letra-btn">F</button>
+            <button class="letra-btn">G</button>
+            <button class="letra-btn">H</button>
+            <button class="letra-btn">I</button>
+            <button class="letra-btn">J</button>
+            <button class="letra-btn">K</button>
+            <button class="letra-btn">L</button>
+            <button class="letra-btn">M</button>
+            <button class="letra-btn">N</button>
+            <button class="letra-btn">O</button>
+            <button class="letra-btn">P</button>
+            <button class="letra-btn">Q</button>
+            <button class="letra-btn">R</button>
+            <button class="letra-btn">S</button>
+            <button class="letra-btn">T</button>
+            <button class="letra-btn">U</button>
+            <button class="letra-btn">V</button>
+            <button class="letra-btn">W</button>
+            <button class="letra-btn">X</button>
+            <button class="letra-btn">Y</button>
+            <button class="letra-btn">Z</button>
+
+            <!-- Linha final (Enter, Del, Hint, Reset) -->
+            <div class="teclado-final">
+                <button class="letra-btn">Enter</button>
+                <button class="letra-btn">Del</button>
+                <button class="letra-btn">Hint</button>
+                <button class="letra-btn">Reset</button>
+            </div>
         </div>
-        
-        <div class="forca" id="palavra"></div>
-        
-        <div class="letras-erradas">
-            Letras erradas: <span id="erradas"></span>
-        </div>
-        
-        <div id="teclado" class="teclado-virtual"></div>
-        
-        <div id="mensagem" class="mensagem-jogo"></div>
-        
-        <button id="reiniciar-btn" class="botao-reiniciar">Jogar Novamente</button>
     </div>
-
-    <div class="forca-desenho">
-        <div class="poste"></div>
-        <div class="trave"></div>
-        <div class="corda"></div>
-
-        <div id="cabeca" class="parte cabeca"></div>
-        <div id="tronco" class="parte tronco"></div>
-        <div id="braco-esq" class="parte braco-esq"></div>
-        <div id="braco-dir" class="parte braco-dir"></div>
-        <div id="perna-esq" class="parte perna-esq"></div>
-        <div id="perna-dir" class="parte perna-dir"></div>
-    </div>
-
 
     <script src="forcaFuncional.js"></script>
 </body>
-
 </html>

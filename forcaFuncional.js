@@ -98,6 +98,70 @@ const mostrarMensagem = (jogo) =>
   jogo.status === "vitoria" ? "🎉 Você venceu!" :
   jogo.status === "derrota" ? "💀 Você perdeu!" : ""
 
+
+  const desenharForca = (erros) => {
+  const desenhos = [
+    // 0 erros - apenas a forca
+    `   +---+
+   |   |
+       |
+       |
+       |
+       |
+=========`,
+    // 1 erro - cabeça
+    `   +---+
+   |   |
+   O   |
+       |
+       |
+       |
+=========`,
+    // 2 erros - corpo
+    `   +---+
+   |   |
+   O   |
+   |   |
+       |
+       |
+=========`,
+    // 3 erros - braço esquerdo
+    `   +---+
+   |   |
+   O   |
+  /|   |
+       |
+       |
+=========`,
+    // 4 erros - braço direito
+    `   +---+
+   |   |
+   O   |
+  /|\\  |
+       |
+       |
+=========`,
+    // 5 erros - perna esquerda
+    `   +---+
+   |   |
+   O   |
+  /|\\  |
+  /    |
+       |
+=========`,
+    // 6 erros - perna direita (completo)
+    `   +---+
+   |   |
+   O   |
+  /|\\  |
+  / \\  |
+       |
+=========`
+  ]
+  
+  return desenhos[Math.min(erros, 6)]
+}
+
 //estado inicial
 // Lista de palavras para sortear.
 const palavras = ["JAVASCRIPT", "FUNCIONAL", "PROGRAMAR", "RECURSIVIDADE"]
@@ -148,6 +212,13 @@ const renderizarJogo = (jogo, onReiniciar, onLetraClick) => {
   return criarElemento("div", { className: "container" }, [
     // Título do jogo
     criarElemento("h1", { textContent: "Jogo da Forca" }),
+    // Desenho da forca
+    criarElemento("div", { className: "forca-container" }, [
+      criarElemento("div", { 
+        className: "forca-desenho", 
+        textContent: desenharForca(jogo.letraserradas.length) 
+      })
+    ]),
     // Exibe a palavra com letras reveladas ou "_"
     criarElemento("div", { className: "palavra", textContent: mostrarPalavra(jogo) }),
     // Informações de tentativas e letras erradas
@@ -171,6 +242,7 @@ const renderizarJogo = (jogo, onReiniciar, onLetraClick) => {
     })
   ])
 }
+
 
 //loop principal
 // Função principal de ciclo do jogo: renderiza e atualiza o estado conforme as ações do usuário
@@ -208,5 +280,3 @@ const cicloDeJogo = (estadoAtual) => {
 document.addEventListener("DOMContentLoaded", () => {
   cicloDeJogo(iniciar())
 })
-
-teste commits 
