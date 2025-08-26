@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /* Reset e configurações base */
 /* Remove margens e paddings padrão, define box-sizing para facilitar layout */
 * {
@@ -13,6 +14,7 @@ body {
     min-height: 100vh;
     /*padding: 20px;*/
     color: #000000;
+   /* overflow: hidden;*/
 }
 
 /* Centraliza o conteúdo principal vertical e horizontalmente */
@@ -20,37 +22,38 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    min-height: 100vh;
+    height: 100vh;
 }
 
 /* Container principal do jogo: fundo branco translúcido, bordas arredondadas e sombra */
 .container {
     background: rgba(255, 255, 255, 0.95);
-    border-radius: 20px;
+    border-radius: 30px;
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-    padding: 40px;
-    max-width: 600px;
+    padding: 50px;
+    max-width: 900px;
     width: 100%;
     text-align: center;
     border: 1px solid rgba(255, 255, 255, 0.2);
-    margin: 20px;
+    max-height: 100vh;
+    transform-origin: top center;
 }
 
 /* Título do jogo: tamanho grande, cor e sombra de texto */
 .container h1 {
     font-size: 2.5rem;
     color: #000000;
-    margin-bottom: 10px;
+    /*margin-bottom: 10px;*/
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 /* Palavra a ser adivinhada: destaque visual, espaçamento e fundo */
 .palavra {
-    font-size: 2.5rem;
+    font-size: 2rem;
     font-weight: bold;
     letter-spacing: 0.3rem;
     margin: 30px 0;
-    min-height: 4rem;
+    min-height: 2rem;
     color: #2d3748;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
     display: flex;
@@ -68,13 +71,13 @@ body {
     justify-content: center;
     align-items: center;
     margin: 20px 0;
-    height: 300px;
+    height: 250px;
 }
 
 /* Desenho da forca: fonte monoespaçada, fundo translúcido e borda */
 .forca-desenho {
     font-family: 'Courier New', Courier, monospace;
-    font-size: 1.6rem;
+    font-size: 1.5rem;
     line-height: 1.2;
     white-space: pre;
     color: #000000;
@@ -108,7 +111,7 @@ body {
 /* Teclado virtual: grid responsivo para as letras */
 .teclado {
     display: grid;
-    grid-template-columns: repeat(7, 50px); /* 7 colunas fixas */
+    grid-template-columns: repeat(9, 60px); /* 7 colunas fixas */
     column-gap: 15px;
     row-gap: 15px;
     margin: 30px auto;
@@ -149,7 +152,7 @@ body {
     left: -100%;
     width: 100%;
     height: 100%;
-    transition: left 0.5s;
+
 }
 
 /* Animação do efeito ao hover */
@@ -255,13 +258,14 @@ body {
 }
 @media (max-width: 768px) {
     .teclado {
-        grid-template-columns: repeat(7, 1fr);
-        gap: 6px;
+        grid-template-columns: repeat(9, 1fr);
+        column-gap: 8px;
+        row-gap: 8px;
     }
     .letra-btn {
-        width: 40px;
-        height: 40px;
-        font-size: 1rem;
+        width: 35px;
+        height: 35px;
+        font-size: 0.9rem;
     }
     .mensagem {
         font-size: 1.5rem;
@@ -269,6 +273,7 @@ body {
      .container {
         padding: 20px;
         margin: 10px;
+        transform: scale(0.85);
     }
     .container h1 {
         font-size: 2rem;
