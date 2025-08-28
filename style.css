@@ -228,18 +228,7 @@ body {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-/* Rodapé do jogo: separação visual e estilo do texto */
-/*.game-footer {
-    margin-top: 30px;
-    padding-top: 20px;
-    border-top: 1px solid rgba(0, 38, 255, 0.3);
-}*/
 
-/*.game-footer p {
-    color: #0066ff;
-    font-size: 0.9rem;
-    font-style: italic;
-}*/
 @media (max-width: 768px) {
     .teclado {
         grid-template-columns: repeat(9, 1fr);
