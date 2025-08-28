@@ -210,8 +210,8 @@ const renderizarTeclado = (jogo, onLetraClick) => {
 // Função para renderizar toda a interface do jogo da forca
 const renderizarJogo = (jogo, onReiniciar, onLetraClick) => {
   return criarElemento("div", { className: "container" }, [
-    // Título do jogo
-    criarElemento("h1", { textContent: "Jogo da Forca" }),
+    // Título do jogob
+    criarElemento("h1", { textContent: "Jogo da Forca🎯" }),
     // Desenho da forca
     criarElemento("div", { className: "forca-container" }, [
       criarElemento("div", { 
@@ -264,6 +264,8 @@ const cicloDeJogo = (estadoAtual) => {
     cicloDeJogo(iniciar())
   }
 
+  tecladoFisico(handleLetraClick)
+
   // Renderiza a interface do jogo com os manipuladores de eventos
   const elementoRenderizado = renderizarJogo(
     estadoAtual,
@@ -280,3 +282,13 @@ const cicloDeJogo = (estadoAtual) => {
 document.addEventListener("DOMContentLoaded", () => {
   cicloDeJogo(iniciar())
 })
+// Função para receber letras do teclado físico
+const tecladoFisico = (onLetraClick) => {
+  document.addEventListener("keydown", (event) => {
+    // verifica se a tecla pressionada é uma letra 
+    if(event.key.length === 1 && event.key.match(/[a-z]/i)){
+      const letra = event.key.toUpperCase()
+      onLetraClick(letra);
+    }
+  })
+}
