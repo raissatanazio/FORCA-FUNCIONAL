@@ -1,0 +1,292 @@
+
+/* Reset e configurações base */
+
+/* Estilização geral do body: fonte, fundo gradiente, preenchimento e cor do texto */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #000000 0%, #3a3a3b 100%);
+    height: 100vh;
+    margin: 0;
+    /*min-height: 100vh;*/
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /*padding: 20px;*/
+    color: #797676;
+    /*overflow: hidden;*/
+}
+
+/* Centraliza o conteúdo principal vertical e horizontalmente */
+#app {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+/* Container principal do jogo: fundo branco translúcido, bordas arredondadas e sombra */
+.container {
+    background: rgba(0, 0, 0, 0.95);
+    border-radius: 20px;
+    padding: 30px;
+    max-width:900px;
+    width: 108vw;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    height: auto;
+    /*max-height: 108vh;*/
+   /* overflow-y: auto;*/
+   min-height: auto;
+}
+
+/* Título do jogo: tamanho grande, cor e sombra de texto */
+.container h1 {
+    font-size: 2.5rem;
+    color: #ffffff;
+    margin-bottom: 5px;
+    margin-top: 0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Palavra a ser adivinhada: destaque visual, espaçamento e fundo */
+.palavra {
+    font-size: 2rem;
+    font-weight: bold;
+    letter-spacing: 0.3rem;
+    margin: 30px 0;
+    min-height: 1rem;
+    color: #000000;
+    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgb(255, 255, 255);
+    border-radius: 15px;
+    padding: 20px;
+}
+
+/* Área do desenho da forca: centraliza e define altura */
+.forca-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+    height: 250px;
+}
+
+/* Desenho da forca: fonte monoespaçada, fundo translúcido e borda */
+.forca-desenho {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1.5rem;
+    line-height: 1.2;
+    white-space: pre;
+    color: #000000;
+    background: rgb(255, 255, 255);
+    padding: 20px;
+    border-radius: 12px;
+    border: 2px solid rgba(102, 126, 234, 0.2);
+    text-align: center;
+    min-width: 200px;
+}
+
+/* Informações do jogo: layout flexível, fundo translúcido e borda */
+.info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 4px, 0;
+    padding: 0.5px 10px;
+    background: rgba(255, 255, 255, 0.892);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 254, 254, 0.3);
+}
+
+/* Texto das informações do jogo */
+.info p {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #c71818;
+}
+
+/* Teclado virtual: grid responsivo para as letras */
+.teclado {
+    display: grid;
+    grid-template-columns: repeat(9, 60px); /* 7 colunas fixas */
+    column-gap: 15px;
+    row-gap: 15px;
+    margin: 30px auto;
+    width: fit-content;  /* deixa o grid ter a largura necessária */
+    justify-content: center;
+}
+
+.teclado-final {
+    grid-column: span 9;   /* ocupa todas as 7 colunas */
+    display: flex;
+    justify-content: center;
+    gap: 15px;             /* mesmo espaçamento dos outros */
+    margin-top: 15px;
+}
+
+/* Botão de letra: estilo, cor, sombra e interação */
+.letra-btn {
+    width: 50px;
+    height: 45px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    background: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    justify-self: center;
+    position: relative;
+    transition: background 0.3s, box-shadow 0.3s, transform 0.2s;
+}
+
+/* Efeito de elevação ao hover */
+.letra-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(200, 207, 215, 0.2);
+    background: linear-gradient(145deg, rgb(163, 165, 167), rgb(82, 87, 90));
+}
+
+/* Efeito ao clicar no botão */
+.letra-btn:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/*.letra-btn:disabled, 
+.letra-btn:disabled:hover, 
+.letra-btn:disabled:active {
+    background: linear-gradient(145deg, #000000, #000000) !important;
+    cursor: not-allowed !important;
+    transform: none !important;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1) !important;
+    color: #000000 !important;
+}*/
+
+/* Mensagens de status: vitória ou derrota */
+.mensagem {
+    font-size: 1.6rem;
+    margin: 5px 0;
+    min-height: 60px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+}
+
+/* Mensagem de vitória: cor verde, fundo e animação */
+.mensagem.vitoria {
+    color: #ffffff;
+    background: green;
+    border: 2px solid rgba(56, 161, 105, 0.3);
+    animation: pulse 2s infinite;
+}
+
+/* Mensagem de derrota: cor vermelha, fundo e animação */
+.mensagem.derrota {
+    color: #ffffff;
+    background: red;
+    border: 2px solid rgba(229, 62, 62, 0.3);
+    animation: shake 0.5s ease-in-out;
+}
+
+/* Botão de reiniciar: destaque visual e interação */
+.reiniciar-btn {
+    display: block;
+    margin: 30px auto;
+    padding: 15px 30px;
+    background: linear-gradient(145deg, #48bb78, #38a169);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: all 0.3s ease;
+  /*  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);*/
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    justify-content: top center;
+}
+
+/* Efeito ao passar o mouse no botão de reiniciar */
+.reiniciar-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    background: linear-gradient(145deg, #38a169, #2f855a);
+}
+
+/* Efeito ao clicar no botão de reiniciar */
+.reiniciar-btn:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+
+@media (max-width: 768px) {
+    .teclado {
+        grid-template-columns: repeat(9, 1fr);
+        column-gap: 8px;
+        row-gap: 8px;
+    }
+    .letra-btn {
+        width: 35px;
+        height: 35px;
+        font-size: 0.9rem;
+    }
+    .mensagem {
+        font-size: 1.5rem;
+    }
+     .container {
+        padding: 20px;
+        margin: 10px;
+        transform: scale(0.85);
+    }
+    .container h1 {
+        font-size: 2rem;
+    }
+    .palavra {
+        font-size: 2rem;
+        letter-spacing: 0.2rem;
+        padding: 15px;
+    }
+    .info {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+}
+@keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(56, 161, 105, 0.4); }
+    70% { box-shadow: 0 0 0 10px rgba(56, 161, 105, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(56, 161, 105, 0); }
+}
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    20%, 60% { transform: translateX(-8px); }
+    40%, 80% { transform: translateX(8px); }
+}
+@media (max-height: 850px) {
+  .container {
+    transform: scale(0.9);
+  }
+}
+
+@media (max-height: 750px) {
+  .container {
+    transform: scale(0.8);
+  }
+}
+
+@media (max-height: 650px) {
+  .container {
+    transform: scale(0.7);
+  }
+}
